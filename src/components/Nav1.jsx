@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
 
 export default function Nav1() {
   return (
@@ -15,8 +14,6 @@ export default function Nav1() {
           Vans
         </Link>
       </nav>
-
-      <Footer />
     </>
   );
 }
