@@ -1,7 +1,9 @@
+import Footer from "./Footer";
+
 export default function Home() {
   return (
-    <div>
-      <nav className="flex items-center gap-x-3 bg-[#FFF7ED] px-3 py-5">
+    <>
+      <nav className="flex items-center gap-x-3  px-3 py-5">
         <h1 className="text-xl font-extrabold">#VANLIFE</h1>
         <p className="ml-auto font-semibold">About</p>
         <p className="font-semibold">Vans</p>
@@ -26,6 +28,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-    </div>
+
+      <Footer />
+    </>
   );
 }
