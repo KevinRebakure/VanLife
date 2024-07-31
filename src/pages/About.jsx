@@ -1,12 +1,19 @@
-import Footer from "./Footer";
+import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function About() {
   return (
     <>
-      <nav className="flex items-center gap-x-3  px-3 py-5">
-        <h1 className="text-xl font-extrabold">#VANLIFE</h1>
-        <p className="ml-auto font-semibold">About</p>
-        <p className="font-semibold">Vans</p>
+      <nav className="flex items-center gap-x-3 px-3 py-5">
+        <Link to="/" className="text-xl font-extrabold">
+          #VANLIFE
+        </Link>
+        <Link to="/about" className="ml-auto font-semibold">
+          About
+        </Link>
+        <Link to="/vans" className="font-semibold">
+          Vans
+        </Link>
       </nav>
 
       <img
@@ -29,13 +36,16 @@ export default function About() {
           of touring the world on 4 wheels.
         </p>
 
-        <div className="bg-[#FFCC8D] p-4 space-y-4">
+        <div className="space-y-4 bg-[#FFCC8D] p-4">
           <p className="text-2xl font-bold">
             Your destination is waiting. Your van is ready.
           </p>
-          <button className="py-2 px-3 rounded-md bg-[#161616] font-semibold text-white">
+          <Link
+            to="/vans"
+            className="rounded-md bg-[#161616] px-3 py-2 font-semibold text-white"
+          >
             Explore our vans
-          </button>
+          </Link>
         </div>
       </div>
 

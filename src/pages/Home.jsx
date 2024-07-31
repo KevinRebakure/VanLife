@@ -1,12 +1,19 @@
-import Footer from "./Footer";
+import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <>
-      <nav className="flex items-center gap-x-3  px-3 py-5">
-        <h1 className="text-xl font-extrabold">#VANLIFE</h1>
-        <p className="ml-auto font-semibold">About</p>
-        <p className="font-semibold">Vans</p>
+      <nav className="flex items-center gap-x-3 px-3 py-5">
+        <Link to="/" className="text-xl font-extrabold">
+          #VANLIFE
+        </Link>
+        <Link to="/about" className="ml-auto font-semibold">
+          About
+        </Link>
+        <Link to="/vans" className="font-semibold">
+          Vans
+        </Link>
       </nav>
 
       <div className="relative h-[400px] w-full">
