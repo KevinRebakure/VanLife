@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -9,17 +9,34 @@ export default function Header() {
         </Link>
 
         <nav className="ml-auto flex items-center space-x-3">
-          <Link to="/host" className="font-semibold hover:underline">
+          <NavLink
+            to="/host"
+            className={({ isActive }) =>
+              isActive ? "font-semibold underline" : "hover:underline"
+            }
+          >
             Host
-          </Link>
-          <Link to="/about" className="font-semibold hover:underline">
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "font-semibold underline" : "hover:underline"
+            }
+          >
             About
-          </Link>
-          <Link to="/vans" className="font-semibold hover:underline">
+          </NavLink>
+          <NavLink
+            to="/vans"
+            className={({ isActive }) =>
+              isActive ? "font-semibold underline" : "hover:underline"
+            }
+          >
             Vans
-          </Link>
+          </NavLink>
         </nav>
       </header>
     </>
   );
 }
+
+//  className="font-semibold hover:underline"

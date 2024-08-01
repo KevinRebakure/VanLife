@@ -4,11 +4,15 @@ import Footer from "./Footer";
 export default function Layout() {
   return (
     <>
-      <Header />
+      <div className="mx-auto w-[550px] bg-[#FFF7ED]">
+        <Header />
 
-      <Outlet />
+        <main>
+          <Outlet />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 }
