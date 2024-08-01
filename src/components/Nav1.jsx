@@ -7,10 +7,10 @@ export default function Nav1() {
         <Link to="/" className="text-xl font-extrabold">
           #VANLIFE
         </Link>
-        <Link to="/about" className="ml-auto font-semibold">
+        <Link to="/about" className="ml-auto font-semibold hover:underline">
           About
         </Link>
-        <Link to="/vans" className="font-semibold">
+        <Link to="/vans" className="font-semibold hover:underline">
           Vans
         </Link>
       </nav>
