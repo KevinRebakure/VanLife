@@ -11,19 +11,9 @@ export default function Vans() {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const vanElements = vans.map((van) => (
-    <div key={van.id} className="van-tile">
-      <img src={van.imageUrl} />
-      <div className="van-info">
-        <h3>{van.name}</h3>
-        <p>
-          ${van.price}
-          <span>/day</span>
-        </p>
-      </div>
-      <i className={`van-type ${van.type} selected`}>{van.type}</i>
-    </div>
-  ));
+  const vanElements = vans.map((van) => {
+    return <VanMiniCard key={van.id} {...van} />;
+  });
 
   console.log(vans);
   return (
@@ -47,16 +37,7 @@ export default function Vans() {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 p-4">
-          <VanMiniCard />
-          <VanMiniCard />
-
-          <VanMiniCard />
-          <VanMiniCard />
-
-          <VanMiniCard />
-          <VanMiniCard />
-        </div>
+        <div className="grid grid-cols-2 gap-3 p-4">{vanElements}</div>
       </div>
 
       <Footer />

@@ -34,7 +34,7 @@ export default function About() {
 
           <Link
             to="/vans"
-            className="text-center block rounded-md bg-[#161616] px-3 py-2 font-semibold text-white"
+            className="block rounded-md bg-[#161616] px-3 py-2 text-center font-semibold text-white"
           >
             Explore our vans
           </Link>
