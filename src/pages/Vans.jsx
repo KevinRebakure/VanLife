@@ -1,11 +1,35 @@
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Nav1 from "../components/Nav1";
 import VanMiniCard from "../components/VanMiniCard";
 
 export default function Vans() {
+  const [vans, setVans] = useState([]);
+  useEffect(() => {
+    fetch("/api/vans")
+      .then((res) => res.json())
+      .then((data) => setVans(data.vans));
+  }, []);
+
+  const vanElements = vans.map((van) => (
+    <div key={van.id} className="van-tile">
+      <img src={van.imageUrl} />
+      <div className="van-info">
+        <h3>{van.name}</h3>
+        <p>
+          ${van.price}
+          <span>/day</span>
+        </p>
+      </div>
+      <i className={`van-type ${van.type} selected`}>{van.type}</i>
+    </div>
+  ));
+
+  console.log(vans);
   return (
     <>
       <Nav1 />
+
       <div className="space-y-3 py-3">
         <h1 className="px-3 text-2xl font-semibold">Explore our vans</h1>
         <div className="flex items-center gap-x-3 px-3">
@@ -34,6 +58,7 @@ export default function Vans() {
           <VanMiniCard />
         </div>
       </div>
+
       <Footer />
     </>
   );

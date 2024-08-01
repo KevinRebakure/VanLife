@@ -31,9 +31,10 @@ export default function About() {
           <p className="text-2xl font-bold">
             Your destination is waiting. Your van is ready.
           </p>
+
           <Link
             to="/vans"
-            className="rounded-md bg-[#161616] px-3 py-2 font-semibold text-white"
+            className="text-center block rounded-md bg-[#161616] px-3 py-2 font-semibold text-white"
           >
             Explore our vans
           </Link>
