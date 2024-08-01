@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import Footer from "../components/Footer";
 import { useEffect } from "react";
 import { useState } from "react";
 export default function VanDetail() {
@@ -56,8 +55,6 @@ export default function VanDetail() {
       ) : (
         <p>Loading...</p>
       )}
-
-      <Footer />
     </>
   );
 }

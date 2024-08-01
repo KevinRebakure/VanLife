@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 
 export default function About() {
   return (
@@ -37,8 +36,6 @@ export default function About() {
           </Link>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

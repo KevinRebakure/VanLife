@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer";
 import VanMiniCard from "../components/VanMiniCard";
 
 export default function Vans() {
@@ -36,8 +35,6 @@ export default function Vans() {
 
         <div className="grid grid-cols-2 gap-3 p-4">{vanElements}</div>
       </div>
-
-      <Footer />
     </>
   );
 }
