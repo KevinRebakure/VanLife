@@ -9,7 +9,11 @@ export default function VanMiniCard(props) {
 
   return (
     <div className="w-[250px] space-y-2">
-      <img src={`${imageUrl}`} className="size-[250px] object-cover rounded-lg" alt="" />
+      <img
+        src={`${imageUrl}`}
+        className="size-[250px] rounded-lg object-cover"
+        alt=""
+      />
       <div className="flex items-center justify-between">
         <p className="text-2xl font-semibold">{name}</p>
         <p>
