@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav1 from "../components/Nav1";
 
@@ -20,9 +21,12 @@ export default function Home() {
             Add adventure to your life by joining the #vanlife movement. Rent
             the perfect van to make your perfect road trip.
           </p>
-          <button className="block w-full rounded-md bg-[#FF8C38] py-3 text-center font-semibold">
+          <Link
+            to="/vans"
+            className="block w-full rounded-md bg-[#FF8C38] py-3 text-center font-semibold"
+          >
             Find your van
-          </button>
+          </Link>
         </div>
       </div>
 
