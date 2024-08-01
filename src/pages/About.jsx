@@ -1,12 +1,9 @@
-import Nav1 from "../components/Nav1";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 
 export default function About() {
   return (
     <>
-      <Nav1 />
-
       <img
         src="./guy sitting on a van.png"
         className="h-[240px] w-full"

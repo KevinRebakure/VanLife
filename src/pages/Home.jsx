@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import Nav1 from "../components/Nav1";
 
 export default function Home() {
   return (
     <>
-      <Nav1 />
-
       <div className="relative h-[400px] w-full">
         <img
           src="./home hill.png"

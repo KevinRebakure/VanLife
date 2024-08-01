@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
-import Nav1 from "../components/Nav1";
 import { useEffect } from "react";
 import { useState } from "react";
 export default function VanDetail() {
@@ -21,8 +20,6 @@ export default function VanDetail() {
 
   return (
     <>
-      <Nav1 />
-
       {vanData ? (
         <div className="space-y-4 p-4">
           <Link
