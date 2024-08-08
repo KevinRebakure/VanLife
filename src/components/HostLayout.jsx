@@ -6,8 +6,6 @@ export default function HostLayout() {
     <>
       <HostNav />
 
-      <h1 className="px-3">This is the Host Layout</h1>
-
       <div className="p-4">
         <Outlet />
       </div>
