@@ -21,7 +21,9 @@ export default function HostVanDetail() {
 
   return (
     <>
-      <Link to="../vans" className="underline">Back to all vans</Link>
+      <Link to="../vans" className="underline">
+        Back to all vans
+      </Link>
       <div className="space-y-3 rounded-lg bg-white p-3">
         <div className="flex gap-x-3">
           <img
