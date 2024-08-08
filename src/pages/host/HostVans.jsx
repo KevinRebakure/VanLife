@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HostVans() {
   const [hostVans, setHostVans] = useState([]);
@@ -12,13 +13,15 @@ export default function HostVans() {
   }, []);
   const hostVansElements = hostVans.map((van) => {
     return (
-      <div key={van.id} className="flex gap-x-3">
-        <img src={van.imageUrl} alt="" className="size-[60px] rounded-md" />
-        <div className="flex flex-col justify-center">
-          <p className="text-lg font-semibold">{van.name}</p>
-          <p>{`$${van.price}/day`}</p>
+      <Link key={van.id} to={`${van.hostId}`}>
+        <div className="flex gap-x-3">
+          <img src={van.imageUrl} alt="" className="size-[60px] rounded-md" />
+          <div className="flex flex-col justify-center">
+            <p className="text-lg font-semibold">{van.name}</p>
+            <p>{`$${van.price}/day`}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   });
   return (
