@@ -7,15 +7,13 @@ export default function HostVans() {
     fetch("/api/host/vans")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data.vans);
         setHostVans(data.vans);
       });
   }, []);
   const hostVansElements = hostVans.map((van) => {
     return (
       <Link key={van.id} to="1" className="block">
-        {/* <Link key={van.id} to={`${van.hostId}`}> */}
-        <div className="flex gap-x-3 bg-white p-3 rounded-lg">
+        <div className="flex gap-x-3 rounded-lg bg-white p-3">
           <img src={van.imageUrl} alt="" className="size-[60px] rounded-md" />
           <div className="flex flex-col justify-center">
             <p className="text-lg font-semibold">{van.name}</p>

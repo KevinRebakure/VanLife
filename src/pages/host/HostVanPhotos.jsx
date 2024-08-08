@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function HostVanPhotos() {
-  const [hostVanDetail, setHostVanDetail] = useState([]);
-  // const { id } = useParams();
-  useEffect(() => {
-    fetch(`/api/host/vans/2`)
-      .then((res) => res.json())
-      .then((data) => {
-        setHostVanDetail(data.vans[0]);
-        // console.log(data.vans[0]);
-      });
-  }, []);
+  const hostVanDetail = useOutletContext();
   return (
     <img
       src={`${hostVanDetail.imageUrl}`}
