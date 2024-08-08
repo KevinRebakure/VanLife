@@ -25,6 +25,14 @@ export default function HostNav() {
           className={({ isActive }) =>
             isActive ? "underline" : "hover:underline"
           }
+          to="/host/vans"
+        >
+          Vans
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "underline" : "hover:underline"
+          }
           to="/host/reviews"
         >
           Reviews
