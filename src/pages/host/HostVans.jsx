@@ -13,7 +13,7 @@ export default function HostVans() {
   const hostVansElements = hostVans.map((van) => {
     return (
       <div key={van.id} className="flex gap-x-3">
-        <img src={van.imageUrl} alt="" className="size-[60px]" />
+        <img src={van.imageUrl} alt="" className="size-[60px] rounded-md" />
         <div className="flex flex-col justify-center">
           <p className="text-lg font-semibold">{van.name}</p>
           <p>{`$${van.price}/day`}</p>
