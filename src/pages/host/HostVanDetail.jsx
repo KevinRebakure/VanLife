@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+// import { useParams } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 export default function HostVanDetail() {
   const [hostVanDetail, setHostVanDetail] = useState([]);
@@ -18,7 +19,6 @@ export default function HostVanDetail() {
     luxury: "bg-[#161616]",
     rugged: "bg-[#115E59]",
   };
-
   return (
     <>
       <Link to=".." relative="path" className="mb-3 block underline">
@@ -47,31 +47,33 @@ export default function HostVanDetail() {
         </div>
 
         <div className="flex gap-x-3">
-          <p>Details</p>
-          <p>Pricing</p>
-          <p>Photos</p>
+          <NavLink
+            end
+            to="."
+            className={({ isActive }) =>
+              isActive ? "font-semibold underline" : ""
+            }
+          >
+            Details
+          </NavLink>
+          <NavLink
+            to="pricing"
+            className={({ isActive }) =>
+              isActive ? "font-semibold underline" : ""
+            }
+          >
+            Pricing
+          </NavLink>
+          <NavLink
+            to="photos"
+            className={({ isActive }) =>
+              isActive ? "font-semibold underline" : ""
+            }
+          >
+            Photos
+          </NavLink>
         </div>
-
-        <p>
-          <span className="font-semibold">Name: </span>
-          {hostVanDetail.name}
-        </p>
-
-        <p>
-          <span className="font-semibold">Category: </span>
-          {/* {`${hostVanDetail.type[0].toUpperCase()}${hostVanDetail.type.slice(1)}`} */}
-          {hostVanDetail.type}
-        </p>
-
-        <p>
-          <span className="font-semibold">Description: </span>
-          {hostVanDetail.description}
-        </p>
-
-        <p>
-          <span className="font-semibold">Visibility: </span>
-          Public
-        </p>
+        <Outlet />
       </div>
     </>
   );
