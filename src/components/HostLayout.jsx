@@ -8,7 +8,9 @@ export default function HostLayout() {
 
       <h1 className="px-3">This is the Host Layout</h1>
 
-      <Outlet />
+      <div className="p-4">
+        <Outlet />
+      </div>
     </>
   );
 }
