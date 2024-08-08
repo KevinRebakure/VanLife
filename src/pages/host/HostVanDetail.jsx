@@ -21,7 +21,7 @@ export default function HostVanDetail() {
 
   return (
     <>
-      <Link to="../vans" className="underline">
+      <Link to=".." relative="path" className="mb-3 block underline">
         Back to all vans
       </Link>
       <div className="space-y-3 rounded-lg bg-white p-3">
