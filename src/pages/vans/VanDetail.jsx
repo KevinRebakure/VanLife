@@ -45,10 +45,7 @@ export default function VanDetail() {
             </p>
           </div>
           <p>{vanData.description}</p>
-          <button
-            to="/vans"
-            className="block w-full rounded-md bg-[#FF8C38] py-3 text-center font-semibold text-white"
-          >
+          <button className="block w-full rounded-md bg-[#FF8C38] py-3 text-center font-semibold text-white">
             Rent this van
           </button>
         </div>

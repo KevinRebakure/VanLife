@@ -10,7 +10,7 @@ export default function HostVanDetail() {
       .then((res) => res.json())
       .then((data) => {
         setHostVanDetail(data.vans[0]);
-        console.log(data.vans[0]);
+        // console.log(data.vans[0]);
       });
   }, []);
   const buttonColors = {

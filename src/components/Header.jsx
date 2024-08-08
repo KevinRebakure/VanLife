@@ -4,13 +4,13 @@ export default function Header() {
   return (
     <>
       <header className="flex items-center px-3 py-5">
-        <Link to="/" className="text-xl font-extrabold">
+        <Link to="." className="text-xl font-extrabold">
           #VANLIFE
         </Link>
 
         <nav className="ml-auto flex items-center space-x-3">
           <NavLink
-            to="/host"
+            to="host"
             className={({ isActive }) =>
               isActive ? "font-semibold underline" : "hover:underline"
             }
@@ -18,7 +18,7 @@ export default function Header() {
             Host
           </NavLink>
           <NavLink
-            to="/about"
+            to="about"
             className={({ isActive }) =>
               isActive ? "font-semibold underline" : "hover:underline"
             }
@@ -26,7 +26,7 @@ export default function Header() {
             About
           </NavLink>
           <NavLink
-            to="/vans"
+            to="vans"
             className={({ isActive }) =>
               isActive ? "font-semibold underline" : "hover:underline"
             }

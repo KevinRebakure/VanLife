@@ -13,7 +13,7 @@ export default function Vans() {
     return <VanMiniCard key={van.id} {...van} />;
   });
 
-  console.log(vans);
+  // console.log(vans);
   return (
     <>
       <div className="space-y-3 py-3">

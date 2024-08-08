@@ -10,7 +10,7 @@ export default function VanMiniCard(props) {
   };
 
   return (
-    <Link to={`/vans/${id}`}>
+    <Link to={`${id}`}>
       <div className="w-[250px] space-y-2">
         <img
           src={`${imageUrl}`}
