@@ -15,7 +15,7 @@ export default function HostVans() {
     return (
       <Link key={van.id} to="1" className="block">
         {/* <Link key={van.id} to={`${van.hostId}`}> */}
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-3 bg-white p-3 rounded-lg">
           <img src={van.imageUrl} alt="" className="size-[60px] rounded-md" />
           <div className="flex flex-col justify-center">
             <p className="text-lg font-semibold">{van.name}</p>
