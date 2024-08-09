@@ -6,6 +6,13 @@ export default function Vans() {
   const [vans, setVans] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
+
+  const buttonColors = {
+    simple: "bg-[#E17654]",
+    luxury: "bg-[#161616]",
+    rugged: "bg-[#115E59]",
+  };
+
   useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
@@ -17,7 +24,29 @@ export default function Vans() {
     : vans;
 
   const vanElements = displayVanElements.map((van) => {
-    return <VanMiniCard key={van.id} {...van} />;
+    return (
+      <Link to={`${van.id}`} state={{ search: searchParams.toString() }}>
+        <div className="w-[250px] space-y-2">
+          <img
+            src={`${van.imageUrl}`}
+            className="size-[250px] rounded-lg object-cover"
+            alt=""
+          />
+          <div className="flex items-center justify-between">
+            <p className="text-2xl font-semibold">{van.name}</p>
+            <p>
+              <span className="text-2xl font-semibold">${van.price}</span>{" "}
+              <span>/day</span>
+            </p>
+          </div>
+          <button
+            className={`rounded-md font-semibold text-white ${buttonColors[van.type]} px-2 py-1`}
+          >
+            {van.type}
+          </button>
+        </div>
+      </Link>
+    );
   });
 
   // console.log(vans);
@@ -33,7 +62,7 @@ export default function Vans() {
     });
   }
 
-  const buttonColors = {
+  const navButtonColors = {
     simple: "active:bg-[#E17654] hover:bg-[#E17654] hover:text-white",
     luxury: "active:bg-[#161616] hover:bg-[#161616] hover:text-white",
     rugged: "active:bg-[#115E59] hover:bg-[#115E59] hover:text-white",
@@ -45,21 +74,21 @@ export default function Vans() {
         <div className="flex items-center gap-x-3 px-3">
           <button
             onClick={() => handleFilterChange("type", "simple")}
-            className={`${buttonColors.simple} rounded-md ${typeFilter === "simple" ? "bg-[#E17654] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
+            className={`${navButtonColors.simple} rounded-md ${typeFilter === "simple" ? "bg-[#E17654] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
           >
             Simple
           </button>
 
           <button
             onClick={() => handleFilterChange("type", "luxury")}
-            className={`${buttonColors.luxury} rounded-md ${typeFilter === "luxury" ? "bg-[#161616] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
+            className={`${navButtonColors.luxury} rounded-md ${typeFilter === "luxury" ? "bg-[#161616] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
           >
             Luxury
           </button>
 
           <button
             onClick={() => handleFilterChange("type", "rugged")}
-            className={`${buttonColors.rugged} rounded-md ${typeFilter === "rugged" ? "bg-[#115E59] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
+            className={`${navButtonColors.rugged} rounded-md ${typeFilter === "rugged" ? "bg-[#115E59] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
           >
             Rugged
           </button>
