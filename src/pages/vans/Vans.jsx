@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import VanMiniCard from "../../components/VanMiniCard";
 import { Link, useSearchParams } from "react-router-dom";
 
 export default function Vans() {
@@ -25,7 +24,7 @@ export default function Vans() {
 
   const vanElements = displayVanElements.map((van) => {
     return (
-      <Link to={`${van.id}`} state={{ search: searchParams.toString() }}>
+      <Link key={van.id} to={`${van.id}`} state={{ search: searchParams.toString() }}>
         <div className="w-[250px] space-y-2">
           <img
             src={`${van.imageUrl}`}
@@ -49,8 +48,6 @@ export default function Vans() {
     );
   });
 
-  // console.log(vans);
-
   function handleFilterChange(key, value) {
     setSearchParams((prevParams) => {
       if (value === null) {
@@ -67,6 +64,7 @@ export default function Vans() {
     luxury: "active:bg-[#161616] hover:bg-[#161616] hover:text-white",
     rugged: "active:bg-[#115E59] hover:bg-[#115E59] hover:text-white",
   };
+
   return (
     <>
       <div className="space-y-3 py-3">
