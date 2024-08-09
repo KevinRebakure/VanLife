@@ -28,7 +28,7 @@ export default function VanDetail() {
             relative="path"
             className="font-semibold hover:underline"
           >
-            {`Back to ${location.state.type || "all"} vans`}
+            {`Back to ${location.state?.type || "all"} vans`}
           </Link>
           <img
             src={`${vanData.imageUrl}`}
