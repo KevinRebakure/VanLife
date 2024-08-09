@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 import VanMiniCard from "../../components/VanMiniCard";
+import { useSearchParams } from "react-router-dom";
 
 export default function Vans() {
   const [vans, setVans] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
   useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
       .then((data) => setVans(data.vans));
   }, []);
 
-  const vanElements = vans.map((van) => {
+  const displayVanElements = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
+
+  const vanElements = displayVanElements.map((van) => {
     return <VanMiniCard key={van.id} {...van} />;
   });
 
