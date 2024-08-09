@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import VanMiniCard from "../../components/VanMiniCard";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Vans() {
   const [vans, setVans] = useState([]);
@@ -26,16 +26,16 @@ export default function Vans() {
       <div className="space-y-3 py-3">
         <h1 className="px-3 text-2xl font-semibold">Explore our vans</h1>
         <div className="flex items-center gap-x-3 px-3">
-          <button className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
+          <button onClick={()=>setSearchParams({type: 'simple'})} className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
             Simple
           </button>
-          <button className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
+          <button onClick={()=>setSearchParams({type: 'luxury'})} className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
             Luxury
           </button>
-          <button className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
+          <button onClick={()=>setSearchParams({type: 'rugged'})} className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
             Rugged
           </button>
-          <button className="ml-auto px-2 py-1 text-center font-semibold underline">
+          <button onClick={()=>setSearchParams({})} className="ml-auto px-2 py-1 text-center font-semibold underline">
             Clear filters
           </button>
         </div>
