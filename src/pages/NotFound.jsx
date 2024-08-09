@@ -11,7 +11,7 @@ export default function NotFound() {
         to="/"
         className="block w-full rounded-md bg-[#161616] py-2 text-center text-white"
       >
-        Go to home
+        Return to home
       </Link>
     </div>
   );
