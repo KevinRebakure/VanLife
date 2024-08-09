@@ -32,6 +32,12 @@ export default function Vans() {
       return prevParams;
     });
   }
+
+  const buttonColors = {
+    simple: "active:bg-[#E17654] hover:bg-[#E17654] hover:text-white",
+    luxury: "active:bg-[#161616] hover:bg-[#161616] hover:text-white",
+    rugged: "active:bg-[#115E59] hover:bg-[#115E59] hover:text-white",
+  };
   return (
     <>
       <div className="space-y-3 py-3">
@@ -39,21 +45,21 @@ export default function Vans() {
         <div className="flex items-center gap-x-3 px-3">
           <button
             onClick={() => handleFilterChange("type", "simple")}
-            className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold"
+            className={`${buttonColors.simple} rounded-md ${typeFilter === "simple" ? "bg-[#E17654] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
           >
             Simple
           </button>
 
           <button
             onClick={() => handleFilterChange("type", "luxury")}
-            className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold"
+            className={`${buttonColors.luxury} rounded-md ${typeFilter === "luxury" ? "bg-[#161616] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
           >
             Luxury
           </button>
 
           <button
             onClick={() => handleFilterChange("type", "rugged")}
-            className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold"
+            className={`${buttonColors.rugged} rounded-md ${typeFilter === "rugged" ? "bg-[#115E59] text-white" : "bg-[#FFEAD0]"} px-2 py-1 text-center font-semibold`}
           >
             Rugged
           </button>
