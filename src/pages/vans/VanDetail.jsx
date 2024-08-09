@@ -22,8 +22,9 @@ export default function VanDetail() {
       {vanData ? (
         <div className="space-y-4 p-4">
           <Link
-            to="/vans"
-            className="font-semibold underline hover:text-gray-400"
+            to=".."
+            relative="path"
+            className="font-semibold hover:underline"
           >
             Back to all vans
           </Link>
