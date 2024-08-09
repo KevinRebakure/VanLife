@@ -37,18 +37,35 @@ export default function Vans() {
       <div className="space-y-3 py-3">
         <h1 className="px-3 text-2xl font-semibold">Explore our vans</h1>
         <div className="flex items-center gap-x-3 px-3">
-          <button onClick={()=>handleFilterChange('type', 'simple')} className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
+          <button
+            onClick={() => handleFilterChange("type", "simple")}
+            className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold"
+          >
             Simple
           </button>
-          <button onClick={()=>handleFilterChange('type', 'luxury')} className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
+
+          <button
+            onClick={() => handleFilterChange("type", "luxury")}
+            className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold"
+          >
             Luxury
           </button>
-          <button onClick={()=>handleFilterChange('type', 'rugged')} className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold">
+
+          <button
+            onClick={() => handleFilterChange("type", "rugged")}
+            className="rounded-md bg-[#FFEAD0] px-2 py-1 text-center font-semibold"
+          >
             Rugged
           </button>
-          <button onClick={()=>handleFilterChange('type', null)} className="ml-auto px-2 py-1 text-center font-semibold underline">
-            Clear filters
-          </button>
+
+          {typeFilter && (
+            <button
+              onClick={() => handleFilterChange("type", null)}
+              className="ml-auto px-2 py-1 text-center font-semibold underline"
+            >
+              Clear filters
+            </button>
+          )}
         </div>
 
         <div className="grid grid-cols-2 gap-3 p-4">{vanElements}</div>
