@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 export default function Vans() {
   const [vans, setVans] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(searchParams.toString());
   const typeFilter = searchParams.get("type");
 
   const buttonColors = {
@@ -24,7 +25,11 @@ export default function Vans() {
 
   const vanElements = displayVanElements.map((van) => {
     return (
-      <Link key={van.id} to={`${van.id}`} state={{ search: searchParams.toString() }}>
+      <Link
+        key={van.id}
+        to={`${van.id}`}
+        state={{ search: searchParams.toString() }}
+      >
         <div className="w-[250px] space-y-2">
           <img
             src={`${van.imageUrl}`}

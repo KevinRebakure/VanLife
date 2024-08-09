@@ -1,16 +1,18 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 export default function VanDetail() {
   const params = useParams();
   const [vanData, setVanData] = useState({});
+  const location = useLocation();
+  console.log(location);
 
   const buttonColors = {
     simple: "bg-[#E17654]",
     luxury: "bg-[#161616]",
     rugged: "bg-[#115E59]",
   };
-  // console.log(params);
+
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
       .then((res) => res.json())
@@ -22,7 +24,7 @@ export default function VanDetail() {
       {vanData ? (
         <div className="space-y-4 p-4">
           <Link
-            to=".."
+            to={`..?${location.state?.search || ""}`}
             relative="path"
             className="font-semibold hover:underline"
           >
